@@ -5,12 +5,69 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" href="estilo2.css">
+  <link rel="stylesheet" href="estilo3.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
+<div class="tela1-tudo">
+      <div class="tela1-topo">BuzzQuizz</div>
+      <div class="tela1-conteudo">
+        <div class="tela1-criarQuizz">
+          <div>Você não criou nenhum<br>quizz ainda :(</br></div>
+          <div onclick="criacaoDeQuizz()"class="tela1-botao">
+            <div>Criar Quizz</div>
+          </div>
+        </div>
+        <div class="seusQuizzes-titulo">
+          <div>Seus Quizzes</div>
+          <ion-icon onclick="criacaoDeQuizz()" class="iconeMais" name="add-circle"></ion-icon>
+        </div>
+        <div class="tela1-seusQuizzes">
+         <div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div><div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div>
+        </div>
+        <div class="todosOsQuizzes-titulo">
+          <div>Todos os Quizzes</div>
+        </div>
+        <div class="tela1-todosOsQuizzes">
+          <div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div>
+         <div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div><div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div><div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div><div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div><div class="simpsons quizz">
+            <img
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   <div class="tela2">
     <header class="topo-tela2">
       <h1>BuzzQuizz</h1>
@@ -178,7 +235,8 @@
     </div>
 
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   <script src="script.js"></script>
 </body>
 
