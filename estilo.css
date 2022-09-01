@@ -77,6 +77,8 @@
   .tela3-2 .perguntas {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 600px;
     height: 825px;
     background-color: #FFFFFF;
@@ -113,6 +115,8 @@
   .tela3-3 .perguntas {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 600px;
     height: 316px;
     background-color: #FFFFFF;
@@ -174,6 +178,33 @@
   .visivel {
     display: flex;
   }
+
+  @media(max-width: 1100px) {
+
+    .tela3 {
+      font-size:20px;
+    }
+
+    .tela3 input {
+      width: 341px;
+      font-size: 19px;
+    }
+    .tela3 button {
+      font-size: 18px;
+    }
+
+    .tela3 .perguntas {
+      width: 100%;
+    }
+
+    .tela3 .pergunta-n {
+      width: 100%;
+    }
+    .tela3 .nivel-n {
+      width: 100%;
+    }
+  }
+  
 
 
 
