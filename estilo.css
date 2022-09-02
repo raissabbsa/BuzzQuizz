@@ -1,210 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fafafa;
-  }
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fafafa;
+}
 
-  header {
-    background-color: #EC362D;
-    height: 69px;
-    width: 100%;
-    color: #FFFFFF;
-    font-size: 37px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+header {
+  background-color: #ec362d;
+  height: 69px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .tela3 h1 {
-    margin-top: 70px;
-    margin-bottom: 27px;
-    font-size: 23px;
-    font-weight: 700;
-    color: #000000;
-  }
+.tela3 h1 {
+  margin-top: 70px;
+  margin-bottom: 27px;
+  font-size: 23px;
+  font-weight: 700;
+  color: #000000;
+}
 
-  .tela3-1 .perguntas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-    height: 256px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 85px;
+.tela3-1 .perguntas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 256px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 85px;
+}
+
+.tela3 input {
+  width: 564px;
+  height: 46px;
+  margin-bottom: 9px;
+  border-radius: 5px;
+  padding-left: 23px;
+  border: 1px solid #d1d1d1;
+  font-size: 19px;
+  font-style: italic;
+  color: #000000;
+}
+
+.tela3 button {
+  width: 369px;
+  height: 54px;
+  margin-bottom: 160px;
+  margin-top: 45px;
+  background-color: #ec362d;
+  color: #fff5f4;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+}
+
+.tela3 h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.tela3-2 .perguntas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 825px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.tela3 .pergunta-n {
+  width: 600px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tela3 .nivel-n {
+  width: 600px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tela3-3 .perguntas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 316px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.tela3-4 img {
+  width: 500px;
+  height: 266px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.tela3-4 .textoImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 23px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.tela3-4 .voltar {
+  font-size: 21px;
+  color: #818181;
+  margin-top: 9px;
+  margin-bottom: 160px;
+}
+
+.tela3-4 button {
+  margin-bottom: 9px;
+}
+
+.tela3-1 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tela3-2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tela3-3 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tela3-4 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visivel {
+  display: flex;
+}
+
+@media (max-width: 1100px) {
+  .tela3 {
+    font-size: 20px;
   }
 
   .tela3 input {
-    width: 564px;
-    height: 46px;
-    margin-bottom: 9px;
-    border-radius: 5px;
-    padding-left: 23px;
-    border: 1px solid #D1D1D1;
+    width: 341px;
     font-size: 19px;
-    font-style: italic;
-    color: #000000;
   }
-
   .tela3 button {
-    width: 369px;
-    height: 54px;
-    margin-bottom: 160px;
-    margin-top: 45px;
-    background-color: #EC362D;
-    color: #FFF5F4;
-    font-size: 21px;
-    font-weight: 400;
-    text-align: center;
-    border:none;
-    border-radius: 15px;
+    font-size: 18px;
   }
 
-  .tela3 h2 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  .tela3-2 .perguntas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-    height: 825px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 24px;
+  .tela3 .perguntas {
+    width: 100%;
   }
 
   .tela3 .pergunta-n {
-    width: 600px;
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 22px;
-    font-size: 20px;
-    font-weight: 700;
-
+    width: 100%;
   }
-
   .tela3 .nivel-n {
-    width: 600px;
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 22px;
-    font-size: 20px;
-    font-weight: 700;
-
+    width: 100%;
   }
-
-  .tela3-3 .perguntas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-    height: 316px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-
-  .tela3-4 img {
-    width: 500px;
-    height: 266px;
-    border-radius: 5px;
-    position: relative;
-  }
-
-  .tela3-4  .textoImg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-size: 23px;
-    font-weight: 400;
-    color: #FFFFFF;
-  }
-
-  .tela3-4 .voltar {
-    font-size: 21px;
-    color: #818181;
-    margin-top: 9px;
-    margin-bottom: 160px;
-  }
-
-  .tela3-4 button {
-    margin-bottom: 9px;
-  }
-
-  .tela3-1 {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tela3-2 {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tela3-3 {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tela3-4 {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .visivel {
-    display: flex;
-  }
-
-  @media(max-width: 1100px) {
-
-    .tela3 {
-      font-size:20px;
-    }
-
-    .tela3 input {
-      width: 341px;
-      font-size: 19px;
-    }
-    .tela3 button {
-      font-size: 18px;
-    }
-
-    .tela3 .perguntas {
-      width: 100%;
-    }
-
-    .tela3 .pergunta-n {
-      width: 100%;
-    }
-    .tela3 .nivel-n {
-      width: 100%;
-    }
-  }
-  
-
-
-
+}
