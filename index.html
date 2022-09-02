@@ -5,21 +5,66 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" href="estilo2.css">
+  <link rel="stylesheet" href="estilo3.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
-  <div class="tela2 escondido">
-
+  <div class="tela1-tudo escondido ">
+    <div class="tela1-topo">BuzzQuizz</div>
+    <div class="tela1-conteudo">
+      <div class="tela1-criarQuizz">
+        <div>Você não criou nenhum<br>quizz ainda :(</br></div>
+        <div onclick="criacaoDeQuizz()" class="tela1-botao">
+          <div>Criar Quizz</div>
+        </div>
+      </div>
+      <div class="seusQuizzes-titulo">
+        <div>Seus Quizzes</div>
+        <ion-icon onclick="criacaoDeQuizz()" class="iconeMais" name="add-circle"></ion-icon>
+      </div>
+      <div class="tela1-seusQuizzes">
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+      </div>
+      <div class="todosOsQuizzes-titulo">
+        <div>Todos os Quizzes</div>
+      </div>
+      <div class="tela1-todosOsQuizzes">
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+        <div class="simpsons quizz">
+          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tela2">
     <header class="topo-tela2">
       <h1>BuzzQuizz</h1>
     </header>
     <div class="titulo-quizz-tela2">
+      <img src="./imagens-tela2/potter.png" />
       <h1>Titulo do Quizz</h1>
     </div>
-    
     <div class="caixaquizz-tela2">
       <div class="caixa-perguntas">
         <div class="pergunta">
@@ -28,22 +73,38 @@
         <div class="caixa-respostas">
           <div class="caixa-respostas-esquerda">
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
           </div>
           <div class="caixa-respostas-direita">
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -55,22 +116,38 @@
         <div class="caixa-respostas">
           <div class="caixa-respostas-esquerda">
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
           </div>
           <div class="caixa-respostas-direita">
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
             <div class="resposta-figura">
-              <img src="./imagens-tela2/gatineo.png" />
-              <h1 class="resposta-texto">Gatineo</h1>
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -89,8 +166,10 @@
           </div>
         </div>
       </div>
-        <button class="reiniciar-quizz">Reiniciar Quizz</button>
-        <div class="voltar"><h1>Voltar para home</h1></div>
+      <button class="reiniciar-quizz">Reiniciar Quizz</button>
+      <div class="voltar">
+        <h1>Voltar para home</h1>
+      </div>
     </div>
   </div>
 
@@ -116,6 +195,7 @@
 
       <div class="perguntas">
 
+        <h2>Pergunta 1</h2>
 
       </div>
 
@@ -123,8 +203,11 @@
 
     </div>
 
+      <button>Prosseguir pra criar níveis</button>
 
-    <div class="tela3-3 ">
+    </div>
+
+    <div class="tela3-3">
       <header>BuzzQuizz</header>
       <h1>Agora, decida os níveis</h1>
 
@@ -159,7 +242,8 @@
     </div>
 
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   <script src="script.js"></script>
   <script src="script-Raissa.js"></script>
 </body>
