@@ -64,6 +64,7 @@
     text-align: center;
     border:none;
     border-radius: 15px;
+    cursor: pointer;
   }
 
   .tela3 h2 {
@@ -149,6 +150,10 @@
 
   .tela3-4 button {
     margin-bottom: 9px;
+  }
+
+  .tela3 img{
+    cursor: pointer;
   }
 
   .tela3-1 {

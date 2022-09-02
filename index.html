@@ -97,7 +97,7 @@
 
   <div class="tela3">
 
-    <div class="tela3-1">
+    <div class="tela3-1 visivel">
       <header>BuzzQuizz</header>
       <h1>Comece pelo começo</h1>
 
@@ -107,7 +107,7 @@
         <input type="text" placeholder="Quantidade de perguntas do quizz" class="qntdPerguntas" />
         <input type="text" placeholder="Quantidade de níveis do quizz" class="qntdNiveis" />
       </div>
-      <button>Prosseguir pra criar perguntas</button>
+      <button onclick="infoBasicas()">Prosseguir pra criar perguntas</button>
     </div>
 
     <div class="tela3-2">
@@ -116,25 +116,11 @@
 
       <div class="perguntas">
 
-        <h2>Pergunta 1</h2>
 
-        <input type="text" placeholder="Texto da pergunta" class="textoPergunta" />
-        <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta" />
-
-        <h2>Resposta correta</h2>
-        <input type="text" placeholder="Resposta correta" class="respCorreta" />
-        <input type="text" placeholder="URL da imagem" class="urlImagemPergunta" />
-
-        <h2>Respostas Incorretas</h2>
-        <input type="text" placeholder="Resposta incorreta 1" class="respInorreta1" />
-        <input type="text" placeholder="URL da imagem 1" class="urlImagem1" />
-
-        <input type="text" placeholder="Resposta incorreta 2" class="respInorreta2" />
-        <input type="text" placeholder="URL da imagem 2" class="urlImagem2" />
-
-        <input type="text" placeholder="Resposta incorreta 3" class="respInorreta3" />
-        <input type="text" placeholder="URL da imagem 3" class="urlImagem13" />
       </div>
+
+      <button onclick="criandoQuizz()">Prosseguir para criar níveis</button>
+
     </div>
 
 
@@ -159,7 +145,7 @@
 
     </div>
 
-    <div class="tela3-4 visivel">
+    <div class="tela3-4">
       <header>BuzzQuizz</header>
       <h1>Seu quizz está pronto!</h1>
 
@@ -175,6 +161,7 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="script-Raissa.js"></script>
 </body>
 
 </html>
