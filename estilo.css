@@ -9,6 +9,7 @@ body {
   background-color: #fafafa;
 }
 
+
 header {
   background-color: #ec362d;
   height: 69px;
@@ -64,6 +65,7 @@ header {
   text-align: center;
   border: none;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .tela3 h2 {
@@ -80,13 +82,12 @@ header {
   align-items: center;
   justify-content: center;
   width: 600px;
-  height: 825px;
   background-color: #ffffff;
   padding: 20px;
   margin-bottom: 24px;
 }
 
-.tela3 .pergunta-n {
+.pergunta-n {
   width: 600px;
   height: 64px;
   display: flex;
@@ -110,13 +111,33 @@ header {
   font-weight: 700;
 }
 
+.niveis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maisPerguntas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maisNiveis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .tela3-3 .perguntas {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 600px;
-  height: 316px;
   background-color: #ffffff;
   padding: 20px;
   margin-bottom: 24px;
@@ -126,16 +147,20 @@ header {
   width: 500px;
   height: 266px;
   border-radius: 5px;
+}
+
+.tela3-4 .imagem {
   position: relative;
 }
 
 .tela3-4 .textoImg {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 17px;
+  left: 17px;
   font-size: 23px;
   font-weight: 400;
   color: #ffffff;
+  z-index: 2;
 }
 
 .tela3-4 .voltar {
@@ -149,11 +174,15 @@ header {
   margin-bottom: 9px;
 }
 
-.tela3-1 {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
+  .tela3 img{
+    cursor: pointer;
+  }
+
+  .tela3-1 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
 
 .tela3-2 {
   display: none;
@@ -187,17 +216,31 @@ header {
     font-size: 19px;
   }
   .tela3 button {
-    font-size: 18px;
+    width: 369px;
+    height: 54px;
+    margin-bottom: 160px;
+    margin-top: 45px;
+    background-color: #EC362D;
+    color: #FFF5F4;
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+    border:none;
+    border-radius: 15px;
+    cursor: pointer;
   }
 
   .tela3 .perguntas {
     width: 100%;
   }
 
-  .tela3 .pergunta-n {
+  .pergunta-n {
     width: 100%;
   }
   .tela3 .nivel-n {
+    width: 100%;
+  }
+  .perg {
     width: 100%;
   }
 }

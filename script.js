@@ -1,59 +1,110 @@
-function carregaPagina() {
-  const promessaQuizzes = axios.get(
-    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
-  );
+// resolucao tela 2
 
-  promessaQuizzes.then(inserirQuizzes);
+function comparador() {
+  return Math.random() - 0.5;
 }
-function inserirQuizzes(quizz) {
-  imagemQuizz = quizz.data;
-  todosOsQuizzes = document.querySelector(".tela1-todosOsQuizzes");
+let ordemRespostas = [0, 1, 2, 3];
 
-  console.log("entrou");
-  for (let i = 0; i < imagemQuizz.length; i++) {
-    console.log(todosOsQuizzes.innerHTML);
-    todosOsQuizzes.innerHTML += `<div onclick="abreQuizz(this,${imagemQuizz[i].id})" class=" quizz">
-            <div class="tela1-gradiente"></div>
-            <img class="tela1-imagemQuizz"src="${imagemQuizz[i].image}"/>
-            <div class="tela1-tituloQuizz">${imagemQuizz[i].title}</div>
-          </div>`;
+function mostrarTela2() {
+  const ocultarTela1 = document.querySelector("tela1");
+  ocultarTela1.classList.add(esconder);
+  const mostrarTela2 = document.querySelector("tela2");
+  mostrarTela2.classList.remove(escondido);
+
+  renderizarQuizzEscolhido();
+}
+
+function buscarQuizzEscolhido() {
+  const pegarQuizz = axios.get(
+    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/2"
+  );
+  pegarQuizz.then(renderizarQuizzEscolhido);
+  console.log(pegarQuizz);
+}
+
+function renderizarTituloQuizz(titulo, imagem) {
+  const tituloQuizz = document.querySelector(".titulo-quizz-tela2");
+  tituloQuizz.innerHTML = `<img src="${imagem}" />
+                                <h1>${titulo}</h1>`;
+}
+
+function renderizarQuizzEscolhido(dados) {
+  console.log("chegou");
+  let numPerguntas = dados.data.questions.length;
+  console.log(dados.data.title);
+  renderizarTituloQuizz(dados.data.title, dados.data.image);
+  console.log(dados.data.questions[0].answers[0].image);
+  const renderizarPerguntas = document.querySelector(".caixaquizz-tela2");
+  renderizarPerguntas.innerHTML = "";
+
+  for (let i = 0; i < numPerguntas; i++) {
+    ordemRespostas.sort(comparador);
+    let k = ordemRespostas[0];
+    let j = ordemRespostas[1];
+    let s = ordemRespostas[2];
+    let t = ordemRespostas[3];
+    console.log(k);
+    console.log(j);
+    console.log(s);
+    console.log(t);
+    console.log(ordemRespostas);
+
+    renderizarPerguntas.innerHTML =
+      renderizarPerguntas.innerHTML +
+      `<div class="caixa-perguntas">
+        <div class="pergunta">
+          <h1>${dados.data.questions[i].title}</h1>
+        </div>
+        <div class="caixa-respostas">
+          <div class="caixa-respostas-esquerda">
+            <div class="resposta-figura" onclick="selecionarResposta(this);"> 
+              <div class="figura">
+                <img src="${dados.data.questions[i].answers[k].image}" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[k].text}</h1>
+              </div>
+            </div>
+            <div class="resposta-figura" onclick="selecionarResposta(this);">
+              <div class="figura">
+                <img src="${dados.data.questions[i].answers[j].image}" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[j].text}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="caixa-respostas-direita">
+            <div class="resposta-figura" onclick="selecionarResposta(this);">
+              <div class="figura">
+                <img src="${dados.data.questions[i].answers[s].image}" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[s].text}</h1>
+              </div>
+            </div>
+            <div class="resposta-figura" onclick="selecionarResposta(this);">
+              <div class="figura">
+                <img src="${dados.data.questions[i].answers[t].image}" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[t].text}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
   }
 }
 
-function criacaoDeQuizz() {
-  const tela1 = document.querySelector(".tela1-tudo");
-  const tela31 = document.querySelector(".tela3-1");
-  tela1.classList.add("escondido");
-  tela31.classList.add("visivel");
+buscarQuizzEscolhido();
+
+function selecionarResposta(resposta) {
+  console.log("sim");
+  console.log(resposta);
 }
-carregaPagina();
-function abreQuizz() {
-  const tela2 = document.querySelector(".tela2");
-  const tela1 = document.querySelector(".tela1-tudo");
-  tela1.classList.add("escondido");
-  tela2.classList.remove("escondido");
-  console.log(
-    "chamou função abreQuizz, função onclick do quizz na tela 1, redireciona à tela 2, essa função é um template"
-  );
-}
-function criarPerguntas() {
-  const tela31 = document.querySelector(".tela3-1");
-  const tela32 = document.querySelector(".tela3-2");
-  tela31.classList.remove("visivel");
-  tela32.classList.add("visivel");
-}
-function criarNiveis() {
-  const tela32 = document.querySelector(".tela3-2");
-  const tela33 = document.querySelector(".tela3-3");
-  tela32.classList.remove("visivel");
-  tela33.classList.add("visivel");
-}
-function finalizarQuizz() {
-  const tela33 = document.querySelector(".tela3-3");
-  const tela34 = document.querySelector(".tela3-4");
-  tela33.classList.remove("visivel");
-  tela34.classList.add("visivel");
-}
-function voltarHome() {
-  document.location.reload(true);
-}
+
+const pegaQuiz = axios.get(
+  "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
+);
+console.log(pegaQuiz);
