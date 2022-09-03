@@ -2,6 +2,7 @@ let tituloQuizz;
 let urlImagem;
 let qntdPerguntas;
 let qntdNiveis;
+let idPergunta;
 
 function infoBasicas() {
     tituloQuizz =document.querySelector('.tituloQuizz');
@@ -38,10 +39,10 @@ function criandoQuizz() {
     let tela32 = document.querySelector('.tela3-2 .perguntas');
 
     for(let i=0; i<qntdPerguntas.value; i++) {
-        tela32.innerHTML += `<div class="perg pergunta${i+1}">
+        tela32.innerHTML += `<div data-identifier="question-form" class="perg pergunta${i+1}">
             <div class="pergunta-n">
             <h3>Pergunta ${i+1}</h3> 
-            <img onclick="criandoPerguntas(this)" src="imagens/Vector.png" />
+            <img data-identifier="expand" onclick="criandoPerguntas(this)" src="imagens/Vector.png" />
         </div>
 
         <div class="maisPerguntas escondido">
@@ -153,10 +154,10 @@ function criaPerguntasQuizz() {
 function preencheNiveis() {
     let tela33 = document.querySelector('.tela3-3 .perguntas');
     for(let i=0; i<qntdNiveis.value; i++) {
-        tela33.innerHTML += `<div class="niveis">
+        tela33.innerHTML += `<div data-identifier="level" class="niveis">
             <div class="nivel-n">
             <h3>Nível ${i+1}</h3>
-            <img onclick="liberaNiveis(this)" src="imagens/Vector.png" />
+            <img data-identifier="expand" onclick="liberaNiveis(this)" src="imagens/Vector.png" />
         </div>
         <div class="maisNiveis escondido">
             <input type="text" placeholder="Título do nível" class="tituloNivel" />
@@ -198,13 +199,10 @@ function criaNiveisQuizz() {
         }
         else if(porcAcerto[i].value == 0) {
             cont++;
-            console.log(cont);
         }
-        console.log(porcAcerto[i].value);
     }
-    if(cont === 0) {
+    if(cont == 0) {
         verifica=0;
-        console.log('disgreta'+cont);
     }
 
     urlImagemNivel = document.querySelectorAll('.urlImagemNivel')
@@ -289,7 +287,7 @@ function enviaQuizz() {
     requisicao.then(tratarSucesso);   
 }
 
-function tratarSucesso() {
+function tratarSucesso(argumento) {
     const tela33 = document.querySelector('.tela3-3');
     const tela34 = document.querySelector('.tela3-4');
     tela33.classList.remove('visivel');
@@ -298,6 +296,9 @@ function tratarSucesso() {
     const telaImagem = document.querySelector('.tela3-4 .imagem');
     telaImagem.innerHTML += `<img src=${urlImagem.value} />
     <div class="textoImg">${tituloQuizz.value}</div>`
+
+    idPergunta = argumento.data.id;
+    console.log(argumento);
 }
 
 function verificaHexa(hexa) {
@@ -334,6 +335,14 @@ function verificaHexa(hexa) {
     }
 
 }
+
+/*acessarQuizz(){
+
+}
+
+voltarHome() {
+
+}*/
 
 function verificaUrl(urlImagem) {
     const urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol

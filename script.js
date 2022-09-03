@@ -1,5 +1,6 @@
 // resolucao tela 2
 
+
 function comparador() {
   return Math.random() - 0.5;
 }

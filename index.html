@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="tela1-tudo">
+  <div class="tela1-tudo escondido">
     <div class="tela1-topo">BuzzQuizz</div>
     <div class="tela1-conteudo">
       <div class="tela1-criarQuizz">
@@ -28,7 +28,7 @@
 
          <div class="quizz escondido">
             <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"/>
-            </div>>
+            </div>
           <div class="quizz escondido">
             <img class="gradiente"
               src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"/>
@@ -164,7 +164,7 @@
 
   <div class="tela3">
 
-    <div class="tela3-1 ">
+    <div class="tela3-1 visivel">
       <header>BuzzQuizz</header>
       <h1>Comece pelo começo</h1>
 
@@ -185,13 +185,7 @@
 
       </div>
 
-
-      <div class="pergunta-n">
-        <h3>Pergunta n</h3>
-        <img src="imagens/Vector.png" />
-      </div>
-
-      <button onclick="criarNiveis()">Prosseguir pra criar níveis</button>
+      <button onclick="criaPerguntasQuizz()">Prosseguir pra criar níveis</button>
 
     </div>
 
@@ -202,13 +196,7 @@
       <div class="perguntas">
       </div>
 
-
-      <div class="nivel-n">
-        <h3>Nível n</h3>
-        <img src="imagens/Vector.png" />
-      </div>
-
-      <button onclick="finalizarQuizz()">Finalizar Quizz</button>
+      <button onclick="criaNiveisQuizz()">Finalizar Quizz</button>
 
     </div>
 
@@ -220,7 +208,7 @@
         
       </div>
 
-      <button>Acessar Quizz</button>
+      <button onclick="acessarQuizz()">Acessar Quizz</button>
       <div onclick="voltarHome()"class="voltar">Voltar pra home</div>
     </div>
 
