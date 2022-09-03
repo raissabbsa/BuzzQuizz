@@ -1,6 +1,6 @@
 // resolucao tela 1
 
-function carregaPagina() {
+/*function carregaPagina() {
   const promessaQuizzes = axios.get(
     "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
   );
@@ -120,4 +120,4 @@ function selecionarResposta(resposta) {
 }
  
 const pegaQuiz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
-console.log(pegaQuiz);  
+console.log(pegaQuiz);  */

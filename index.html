@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="tela1-tudo escondido ">
+  <div class="tela1-tudo escondido">
     <div class="tela1-topo">BuzzQuizz</div>
     <div class="tela1-conteudo">
       <div class="tela1-criarQuizz">
@@ -57,7 +57,8 @@
       </div>
     </div>
   </div>
-  <div class="tela2">
+
+  <div class="tela2 escondido">
     <header class="topo-tela2">
       <h1>BuzzQuizz</h1>
     </header>
@@ -195,15 +196,9 @@
 
       <div class="perguntas">
 
-        <h2>Pergunta 1</h2>
-
       </div>
 
-      <button onclick="criandoQuizz()">Prosseguir para criar níveis</button>
-
-    </div>
-
-      <button>Prosseguir pra criar níveis</button>
+      <button onclick="criaPerguntasQuizz()">Prosseguir para criar níveis</button>
 
     </div>
 
@@ -212,19 +207,9 @@
       <h1>Agora, decida os níveis</h1>
 
       <div class="perguntas">
-        <h2>Nível 1</h2>
-        <input type="text" placeholder="Título do nível" class="tituloNivel" />
-        <input type="text" placeholder="% de acerto mínims" class="porcAcerto" />
-        <input type="text" placeholder="URL da imagem do nível" class="urlImagemNivel" />
-        <input type="text" placeholder="Descrição do nível" class="descricaoNivel" />
       </div>
 
-      <div class="nivel-n">
-        <h3>Nível n</h3>
-        <img src="imagens/Vector.png" />
-      </div>
-
-      <button>Finalizar Quizz</button>
+      <button onclick="criaNiveisQuizz()">Finalizar Quizz</button>
 
     </div>
 
@@ -233,8 +218,7 @@
       <h1>Seu quizz está pronto!</h1>
 
       <div class="imagem">
-        <img src="imagens/hp.png" />
-        <div class="textoImg">O quão Potterhead é você?</div>
+        
       </div>
 
       <button>Acessar Quizz</button>
