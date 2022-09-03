@@ -20,51 +20,29 @@
             <div>Criar Quizz</div>
           </div>
         </div>
-        <div class="seusQuizzes-titulo">
+        <div class="seusQuizzes-titulo escondido">
           <div>Seus Quizzes</div>
           <ion-icon onclick="criacaoDeQuizz()" class="iconeMais" name="add-circle"></ion-icon>
         </div>
         <div class="tela1-seusQuizzes">
-         <div class="simpsons quizz">
+
+         <div class="quizz escondido">
             <img
               src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
             />
-          </div><div class="simpsons quizz">
-            <img
+
+          </div><div class="quizz escondido">
+            <img class="gradiente"
               src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
             />
           </div>
         </div>
         <div class="todosOsQuizzes-titulo">
-          <div>Todos os Quizzes</div>
+          
+          <div class="todosOsQuizzesTitulo">Todos os Quizzes</div>
         </div>
         <div class="tela1-todosOsQuizzes">
-          <div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div>
-         <div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div><div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div><div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div><div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div><div class="simpsons quizz">
-            <img
-              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"
-            />
-          </div>
+        
         </div>
       </div>
     </div>
@@ -103,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="caixa-perguntas">
+      <div class="caixa-perguntas escondido">
         <div class="pergunta">
           <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
         </div>
@@ -130,7 +108,7 @@
           </div>
         </div>
       </div>
-      <div class="resultado-quizz">
+      <div class="resultado-quizz escondido">
         <div class="pct-acerto">
           <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
         </div>
@@ -144,8 +122,8 @@
           </div>
         </div>
       </div>
-        <button class="reiniciar-quizz">Reiniciar Quizz</button>
-        <div class="voltar"><h1>Voltar para home</h1></div>
+        <button class="reiniciar-quizz escondido">Reiniciar Quizz</button>
+        <div class="voltar escondido"><h1>Voltar para home</h1></div>
     </div>
   </div>
 
@@ -162,7 +140,7 @@
         <input type="text" placeholder="Quantidade de perguntas do quizz" class="qntdPerguntas" />
         <input type="text" placeholder="Quantidade de níveis do quizz" class="qntdNiveis" />
       </div>
-      <button>Prosseguir pra criar perguntas</button>
+      <button onclick="criarPerguntas()">Prosseguir pra criar perguntas</button>
     </div>
 
     <div class="tela3-2">
@@ -196,7 +174,7 @@
         <img src="imagens/Vector.png" />
       </div>
 
-      <button>Prosseguir pra criar níveis</button>
+      <button onclick="criarNiveis()">Prosseguir pra criar níveis</button>
 
     </div>
 
@@ -217,7 +195,7 @@
         <img src="imagens/Vector.png" />
       </div>
 
-      <button>Finalizar Quizz</button>
+      <button onclick="finalizarQuizz()">Finalizar Quizz</button>
 
     </div>
 
@@ -231,7 +209,7 @@
       </div>
 
       <button>Acessar Quizz</button>
-      <div class="voltar">Voltar pra home</div>
+      <div onclick="voltarHome()"class="voltar">Voltar pra home</div>
     </div>
 
   </div>
