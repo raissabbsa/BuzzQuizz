@@ -5,18 +5,19 @@ function comparador() {
 }
 let ordemRespostas = [0, 1, 2, 3];
 
-function mostrarTela2() {
-  const ocultarTela1 = document.querySelector("tela1");
-  ocultarTela1.classList.add(esconder);
-  const mostrarTela2 = document.querySelector("tela2");
-  mostrarTela2.classList.remove(escondido);
-
-  renderizarQuizzEscolhido();
+function mostrarTela2(id) {
+  const ocultarTela1 = document.querySelector(".tela1");
+  console.log(ocultarTela1);
+  ocultarTela1.classList.add("escondido");
+  const mostrarTela2 = document.querySelector(".tela2");
+  mostrarTela2.classList.remove("escondido");
+  buscarQuizzEscolhido(id);
+  //renderizarQuizzEscolhido();
 }
 
-function buscarQuizzEscolhido() {
+function buscarQuizzEscolhido(id) {
   const pegarQuizz = axios.get(
-    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/2"
+    `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`
   );
   pegarQuizz.then(renderizarQuizzEscolhido);
   console.log(pegarQuizz);
