@@ -11,7 +11,10 @@
 </head>
 
 <body>
-  <div class="tela1-tudo escondido ">
+
+  <div class="tela1">
+
+ 
     <div class="tela1-topo">BuzzQuizz</div>
     <div class="tela1-conteudo">
       <div class="tela1-criarQuizz">
@@ -19,159 +22,137 @@
         <div onclick="criacaoDeQuizz()" class="tela1-botao">
           <div>Criar Quizz</div>
         </div>
+        </div>
+        <div class="seusQuizzes-titulo escondido">
+          <div>Seus Quizzes</div>
+          <ion-icon onclick="criacaoDeQuizz()" class="iconeMais" name="add-circle"></ion-icon>
+        </div>
+        <div class="tela1-seusQuizzes">
+
+         <div class="quizz escondido">
+            <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"/>
+            </div>
+          <div class="quizz escondido">
+            <img class="gradiente"
+              src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg"/>
+          </div>
+        </div>
+        <div class="todosOsQuizzes-titulo">
+                    <div class="todosOsQuizzesTitulo">Todos os Quizzes</div>
+        </div>
+        <div class="tela1-todosOsQuizzes">
+                </div>
       </div>
-      <div class="seusQuizzes-titulo">
-        <div>Seus Quizzes</div>
-        <ion-icon onclick="criacaoDeQuizz()" class="iconeMais" name="add-circle"></ion-icon>
+    </div>
+  
+
+    <div class="tela2 escondido">
+      <header class="topo-tela2">
+        <h1>BuzzQuizz</h1>
+      </header>
+      <div class="titulo-quizz-tela2">
+        <img src="./imagens-tela2/potter.png" />
+        <h1>Titulo do Quizz</h1>
       </div>
-      <div class="tela1-seusQuizzes">
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+      <div class="caixaquizz-tela2">
+        <div class="caixa-perguntas">
+          <div class="pergunta">
+            <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
+          </div>
+          <div class="caixa-respostas">
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        <div class="caixa-perguntas">
+          <div class="pergunta">
+            <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
+          </div>
+          <div class="caixa-respostas">
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="todosOsQuizzes-titulo">
-        <div>Todos os Quizzes</div>
-      </div>
-      <div class="tela1-todosOsQuizzes">
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        <div class="resultado-quizz">
+          <div class="pct-acerto">
+            <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
+          </div>
+          <div class="figura-feedback">
+            <div class="figura-resultado">
+              <img src="./imagens-tela2/a.png" />
+            </div>
+            <div class="feedback">
+              <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo
+                para usar o vira-tempo e reiniciar este teste.</p>
+            </div>
+          </div>
         </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
-        </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
-        </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
-        </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
-        </div>
-        <div class="simpsons quizz">
-          <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/2/1/1649110304012.jpg" />
+        <button class="reiniciar-quizz">Reiniciar Quizz</button>
+        <div class="voltar">
+          <h1>Voltar para home</h1>
         </div>
       </div>
     </div>
-  </div>
-  <div class="tela2">
-    <header class="topo-tela2">
-      <h1>BuzzQuizz</h1>
-    </header>
-    <div class="titulo-quizz-tela2">
-      <img src="./imagens-tela2/potter.png" />
-      <h1>Titulo do Quizz</h1>
-    </div>
-    <div class="caixaquizz-tela2">
-      <div class="caixa-perguntas">
-        <div class="pergunta">
-          <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
-        </div>
-        <div class="caixa-respostas">
-          <div class="caixa-respostas-esquerda">
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-          </div>
-          <div class="caixa-respostas-direita">
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="caixa-perguntas">
-        <div class="pergunta">
-          <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
-        </div>
-        <div class="caixa-respostas">
-          <div class="caixa-respostas-esquerda">
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-          </div>
-          <div class="caixa-respostas-direita">
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-            <div class="resposta-figura">
-              <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
-              </div>
-              <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="resultado-quizz">
-        <div class="pct-acerto">
-          <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
-        </div>
-        <div class="figura-feedback">
-          <div class="figura-resultado">
-            <img src="./imagens-tela2/a.png" />
-          </div>
-          <div class="feedback">
-            <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo
-              para usar o vira-tempo e reiniciar este teste.</p>
-          </div>
-        </div>
-      </div>
-      <button class="reiniciar-quizz">Reiniciar Quizz</button>
-      <div class="voltar">
-        <h1>Voltar para home</h1>
-      </div>
-    </div>
-  </div>
 
 
   <div class="tela3">
@@ -186,7 +167,7 @@
         <input type="text" placeholder="Quantidade de perguntas do quizz" class="qntdPerguntas" />
         <input type="text" placeholder="Quantidade de níveis do quizz" class="qntdNiveis" />
       </div>
-      <button>Prosseguir pra criar perguntas</button>
+      <button onclick="infoBasicas()">Prosseguir pra criar perguntas</button>
     </div>
 
     <div class="tela3-2">
@@ -195,32 +176,9 @@
 
       <div class="perguntas">
 
-        <h2>Pergunta 1</h2>
-
-        <input type="text" placeholder="Texto da pergunta" class="textoPergunta" />
-        <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta" />
-
-        <h2>Resposta correta</h2>
-        <input type="text" placeholder="Resposta correta" class="respCorreta" />
-        <input type="text" placeholder="URL da imagem" class="urlImagemPergunta" />
-
-        <h2>Respostas Incorretas</h2>
-        <input type="text" placeholder="Resposta incorreta 1" class="respInorreta1" />
-        <input type="text" placeholder="URL da imagem 1" class="urlImagem1" />
-
-        <input type="text" placeholder="Resposta incorreta 2" class="respInorreta2" />
-        <input type="text" placeholder="URL da imagem 2" class="urlImagem2" />
-
-        <input type="text" placeholder="Resposta incorreta 3" class="respInorreta3" />
-        <input type="text" placeholder="URL da imagem 3" class="urlImagem13" />
       </div>
 
-      <div class="pergunta-n">
-        <h3>Pergunta n</h3>
-        <img src="imagens/Vector.png" />
-      </div>
-
-      <button>Prosseguir pra criar níveis</button>
+      <button onclick="criaPerguntasQuizz()">Prosseguir pra criar níveis</button>
 
     </div>
 
@@ -229,19 +187,9 @@
       <h1>Agora, decida os níveis</h1>
 
       <div class="perguntas">
-        <h2>Nível 1</h2>
-        <input type="text" placeholder="Título do nível" class="tituloNivel" />
-        <input type="text" placeholder="% de acerto mínims" class="porcAcerto" />
-        <input type="text" placeholder="URL da imagem do nível" class="urlImagemNivel" />
-        <input type="text" placeholder="Descrição do nível" class="descricaoNivel" />
       </div>
 
-      <div class="nivel-n">
-        <h3>Nível n</h3>
-        <img src="imagens/Vector.png" />
-      </div>
-
-      <button>Finalizar Quizz</button>
+      <button onclick="criaNiveisQuizz()">Finalizar Quizz</button>
 
     </div>
 
@@ -250,18 +198,21 @@
       <h1>Seu quizz está pronto!</h1>
 
       <div class="imagem">
-        <img src="imagens/hp.png" />
-        <div class="textoImg">O quão Potterhead é você?</div>
+        
       </div>
 
-      <button>Acessar Quizz</button>
-      <div class="voltar">Voltar pra home</div>
+
+      <button onclick="acessaQuizz()">Acessar Quizz</button>
+
+      <div onclick="voltarHome()"class="voltar">Voltar pra home</div>
     </div>
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   <script src="script.js"></script>
+  <script src="script-Joao.js"></script>
+  <script src="script-Raissa.js"></script>
 </body>
 
 </html>

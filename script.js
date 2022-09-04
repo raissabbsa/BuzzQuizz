@@ -1,38 +1,31 @@
-/* // resolucao tela 1
 
-/* function carregaPagina() {
-  const promessaQuizzes = axios.get(
-    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
-  );
-  console.log(promessaQuizzes);
-}
-function criacaoDeQuizz() {
-  const tela1 = document.querySelector(".tela1-tudo");
-  const tela31 = document.querySelector(".tela3-1");
-  tela1.classList.add("escondido");
-  tela31.classList.add("visivel");
-}
-carregaPagina();
- */
+
 // resolucao tela 2
+
 
 function comparador() {
   return Math.random() - 0.5;
 }
-let ordemRespostas = [0, 1, 2, 3];
 
-function mostrarTela2() {
-  const ocultarTela1 = document.querySelector("tela1");
-  ocultarTela1.classList.add(esconder);
-  const mostrarTela2 = document.querySelector("tela2")
-  mostrarTela2.classList.remove(escondido)
+let duasRespostasAleatorias = [0, 1];
+let tresRespostasAleatorias = [0, 1, 2];
+let quatroRespostasAleatorias = [0, 1, 2, 3];
+let linkApi;
+let idApi;
 
-  renderizarQuizzEscolhido()
+function mostrarTela2(id) {
+  idApi = id
+  const ocultarTela1 = document.querySelector(".tela1");
+  ocultarTela1.classList.add("escondido");
+  const mostrarTela2 = document.querySelector(".tela2");
+  mostrarTela2.classList.remove("escondido");
+
+  buscarQuizzEscolhido(id);
 }
 
-function buscarQuizzEscolhido() {
-
-  const pegarQuizz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/2");
+function buscarQuizzEscolhido(id) {
+  linkApi = `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`
+  const pegarQuizz = axios.get(linkApi);
   pegarQuizz.then(renderizarQuizzEscolhido);
   console.log(pegarQuizz);
 }
@@ -45,11 +38,11 @@ function renderizarTituloQuizz(titulo, imagem) {
 }
 
 let numPerguntas;
+let numRespostas;
+
 
 function renderizarQuizzEscolhido(dados) {
-  //console.log("chegou");
   numPerguntas = dados.data.questions.length;
-  //console.log(dados.data.title);
   renderizarTituloQuizz(dados.data.title, dados.data.image);
   console.log(dados.data.questions[0].answers[0].image)
   const renderizarPerguntas = document.querySelector(".caixaquizz-tela2");
@@ -57,24 +50,19 @@ function renderizarQuizzEscolhido(dados) {
 
   for (let i = 0; i < numPerguntas; i++) {
 
-    ordemRespostas.sort(comparador);
-    let k = ordemRespostas[0];
-    let j = ordemRespostas[1];
-    let s = ordemRespostas[2];
-    let t = ordemRespostas[3];
-    //console.log(k);
-    //console.log(j);
-    //console.log(s);
-    //console.log(t);
-    //console.log(ordemRespostas);
+      if (dados.data.questions[i].answers.length == 2) {
 
-    renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="caixa-perguntas">
-        <div class="pergunta">
-          <h1>${dados.data.questions[i].title}</h1>
-        </div>
-        <div class="caixa-respostas">
-          <div class="caixa-respostas-esquerda">
-            <div class="resposta-figura ${dados.data.questions[i].answers[k].isCorrectAnswer}" onclick="selecionarResposta(this);"> 
+          duasRespostasAleatorias.sort(comparador);
+          let k = duasRespostasAleatorias[0];
+          let j = duasRespostasAleatorias[1];
+          console.log(duasRespostasAleatorias)
+
+          renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="caixa-perguntas">
+          <div class="pergunta">
+            <h1>${dados.data.questions[i].title}</h1>
+          </div>
+          <div class="caixa-respostas">
+            <div class="resposta-figura ${dados.data.questions[i].answers[k].isCorrectAnswer}" onclick="selecionarResposta(this);">
               <div class="figura">
                 <img src="${dados.data.questions[i].answers[k].image}" />
               </div>
@@ -91,163 +79,267 @@ function renderizarQuizzEscolhido(dados) {
               </div>
             </div>
           </div>
-          <div class="caixa-respostas-direita">
-            <div class="resposta-figura ${dados.data.questions[i].answers[s].isCorrectAnswer}" onclick="selecionarResposta(this);">
+        </div>`
+
+      } else if (dados.data.questions[i].answers.length == 3) {
+
+          tresRespostasAleatorias.sort(comparador);
+          let k = tresRespostasAleatorias[0];
+          let j = tresRespostasAleatorias[1];
+          let s = tresRespostasAleatorias[2];
+
+          renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="caixa-perguntas">
+          <div class="pergunta">
+            <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
+          </div>
+          <div class="caixa-respostas">
+            <div class="resposta-figura">
               <div class="figura">
-                <img src="${dados.data.questions[i].answers[s].image}" />
+                <img src="./imagens-tela2/gatineo.png" />
               </div>
               <div class="resposta">
-                <h1 class="resposta-texto">${dados.data.questions[i].answers[s].text}</h1>
+                <h1 class="resposta-texto">Gatineo</h1>
               </div>
             </div>
-            <div class="resposta-figura ${dados.data.questions[i].answers[t].isCorrectAnswer}" onclick="selecionarResposta(this);">
+            <div class="resposta-figura">
               <div class="figura">
-                <img src="${dados.data.questions[i].answers[t].image}" />
+                <img src="./imagens-tela2/gatineo.png" />
               </div>
               <div class="resposta">
-                <h1 class="resposta-texto">${dados.data.questions[i].answers[t].text}</h1>
+                <h1 class="resposta-texto">Gatineo</h1>
+              </div>
+            </div>
+            <div class="resposta-figura">
+              <div class="figura">
+                <img src="./imagens-tela2/gatineo.png" />
+              </div>
+              <div class="resposta">
+                <h1 class="resposta-texto">Gatineo</h1>
               </div>
             </div>
           </div>
+        </div>`
+
+
+      } else if (dados.data.questions[i].answers.length == 4) {
+
+          console.log(dados.data.questions[i].answers.length)
+          quatroRespostasAleatorias.sort(comparador);
+          let k = quatroRespostasAleatorias[0];
+          let j = quatroRespostasAleatorias[1];
+          let s = quatroRespostasAleatorias[2];
+          let t = quatroRespostasAleatorias[3];
+
+          renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="caixa-perguntas">
+    <div class="pergunta" style="background-color: ${dados.data.questions[i].color}">
+      <h1>${dados.data.questions[i].title}</h1>
+    </div>
+    <div class="caixa-respostas">
+        <div class="resposta-figura ${dados.data.questions[i].answers[k].isCorrectAnswer}" onclick="selecionarResposta(this);">
+          <div class="figura">
+            <img src="${dados.data.questions[i].answers[k].image}" />
+          </div>
+          <div class="resposta">
+            <h1 class="resposta-texto">${dados.data.questions[i].answers[k].text}</h1>
+          </div>
         </div>
-      </div>`;
+        <div class="resposta-figura ${dados.data.questions[i].answers[j].isCorrectAnswer}" onclick="selecionarResposta(this);">
+          <div class="figura">
+            <img src="${dados.data.questions[i].answers[j].image}" />
+          </div>
+          <div class="resposta">
+            <h1 class="resposta-texto">${dados.data.questions[i].answers[j].text}</h1>
+          </div>
+        </div>
+        <div class="resposta-figura ${dados.data.questions[i].answers[s].isCorrectAnswer}" onclick="selecionarResposta(this);">
+          <div class="figura">
+            <img src="${dados.data.questions[i].answers[s].image}" />
+          </div>
+          <div class="resposta">
+            <h1 class="resposta-texto">${dados.data.questions[i].answers[s].text}</h1>
+          </div>
+        </div>
+        <div class="resposta-figura ${dados.data.questions[i].answers[t].isCorrectAnswer}" onclick="selecionarResposta(this);">
+          <div class="figura">
+            <img src="${dados.data.questions[i].answers[t].image}" />
+          </div>
+          <div class="resposta">
+            <h1 class="resposta-texto">${dados.data.questions[i].answers[t].text}</h1>
+          </div>
+        </div>
+    </div>
+  </div>
+  `
+              ;
 
-    //  const certa = dados.data.questions[i].answers[k].isCorrectAnswer;
-    // const certaa = dados.data.questions[i].answers[j].isCorrectAnswer;
-    // const certaaa = dados.data.questions[i].answers[s].isCorrectAnswer;
-    //const certaaaa = dados.data.questions[i].answers[t].isCorrectAnswer;
-    //console.log(certa);
-    //console.log(certaa);
-    //console.log(certaaa);
-    //console.log(certaaaa); 
+          
+      }
   }
-
   renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="aparece-resultado"></div>`;
+  const tela2 = document.querySelector(".titulo-quizz-tela2");
+  tela2.scrollIntoView();
 }
 
-buscarQuizzEscolhido();
 
 let acertou = 0;
 let numJogadas = 0
 let perguntas = 1;
+let pai;
 
 function selecionarResposta(resposta) {
-  //console.log("sim");
-  //console.log(resposta);
-  const pai = resposta.parentNode;
-  const vo = pai.parentNode;
-  //console.log(pai);
-  //console.log(vo);
-  const listaResposta = vo.children;
-  const elementofilho1 = listaResposta[0];
-  const elementofilho2 = listaResposta[1];
-  const listaResposta1 = elementofilho1.children;
-  const listaResposta2 = elementofilho2.children;
-  //console.log(listaResposta1);
-  //console.log(listaResposta2);
+  pai = resposta.parentNode;
+  const listaRespostas = pai.children;
+  const qtdeRespostas = pai.children.length;
 
-  //console.log(listaResposta);
+  for (let j = 0; j < qtdeRespostas; j++) {
+      if (listaRespostas[j].classList.contains("resposta-nao-selecionada")) {
+          return
+      }
+  }
 
 
-  for (let i = 0; i < 2; i++) {
-    if (listaResposta1[i].classList.contains("resposta-nao-selecionada")) {
-      return
-    }
+  for (let i = 0; i < qtdeRespostas; i++) {
 
-    if (listaResposta2[i].classList.contains("resposta-nao-selecionada")) {
-      return
-    }
-
-    if (!resposta.classList.contains("resposta-selecionada")) {
       resposta.classList.add("resposta-selecionada");
-    }
-    if (!listaResposta1[i].classList.contains("resposta-selecionada")) {
-      //console.log("ok")
-      listaResposta1[i].classList.add("resposta-nao-selecionada");
-    }
 
-    if (!listaResposta2[i].classList.contains("resposta-selecionada")) {
-      listaResposta2[i].classList.add("resposta-nao-selecionada")
-    }
-    //console.log(listaResposta1[i]);
-    //console.log(listaResposta2[i]); 
 
-    if (listaResposta1[i].classList.contains("true")) {
-      const marcarVerde = listaResposta1[i].lastElementChild;
-      marcarVerde.classList.add("resposta-correta");
-      //console.log("oi");
-    } else {
-      const marcarVermelho = listaResposta1[i].lastElementChild
-      marcarVermelho.classList.add("resposta-incorreta");
-      //console.log("ola");
-    }
+      if (!listaRespostas[i].classList.contains("resposta-selecionada")) {
+      
+          listaRespostas[i].classList.add("resposta-nao-selecionada");
+      }
 
-    if (listaResposta2[i].classList.contains("true")) {
-      const marcarVerde = listaResposta2[i].lastElementChild;
-      marcarVerde.classList.add("resposta-correta");
-      //console.log("oi");
-    } else {
-      const marcarVermelho = listaResposta2[i].lastElementChild
-      marcarVermelho.classList.add("resposta-incorreta");
-      //console.log("ola");
-    }
+      if (listaRespostas[i].classList.contains("true")) {
+          const marcarVerde = listaRespostas[i].lastElementChild;
+          marcarVerde.classList.add("resposta-correta");
+        
+      } else {
+          const marcarVermelho = listaRespostas[i].lastElementChild
+          marcarVermelho.classList.add("resposta-incorreta");
+        
+      }
+  }
 
-    if (resposta.classList.contains("true")) {
-      acertou++; //dividir depois por 2 no final, ta duplicado
-    }
-    //console.log(acertou);
+  if (resposta.classList.contains("true")) {
+      acertou++;
+    
   }
 
   numJogadas++;
   console.log(numJogadas);
-  setTimeout(apareceResultado, 3000);
+  console.log(acertou);
+  setTimeout(proxPergunta, 3000);
+  if (numJogadas == numPerguntas) {
+      setTimeout(pegarDadosResultado, 2000);
+  }
 }
 
 function proxPergunta() {
-  const caixaPerguntas = document.querySelector(".titulo-quizz-tela2");
-  caixaPerguntas.nextChild.scrollIntoView();
 
-}
+  pai.lastElementChild.scrollIntoView();
 
-const pegaQuiz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
-console.log(pegaQuiz);
+} 
 
 let pct;
+let minValue1;
+let minValue2;
+let numeroNiveis;
+let ultimoNivel;
+let pctArredondada;
+
+function pegarDadosResultado() {
+  const pegarQuizz = axios.get(linkApi);
+  pegarQuizz.then(apareceResultado);
+}
 
 function calculoResultado() {
-  pct = ((acertou/2)/numJogadas * 100);
-  const pctArredondada = Math.round(pct);
+  pct = ((acertou) / numJogadas * 100);
+  pctArredondada = Math.round(pct);
   console.log(pctArredondada);
 }
 
-function apareceResultado() {
+function apareceResultado(dados) {
 
-  if (numJogadas == numPerguntas) {
-    calculoResultado();
-    const mostreResultado = document.querySelector(".aparece-resultado");
-    mostreResultado.innerHTML = `<div class="resultado-quizz">
-    <div class="pct-acerto">
-      <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
-    </div>
-    <div class="figura-feedback">
-      <div class="figura-resultado">
-        <img src="./imagens-tela2/a.png" />
-      </div>
-      <div class="feedback">
-        <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo
-          para usar o vira-tempo e reiniciar este teste.</p>
-      </div>
-    </div>
-  </div>
-  <button class="reiniciar-quizz">Reiniciar Quizz</button>
-  <div class="voltar">
-    <h1>Voltar para home</h1>
-  </div>`;
+  calculoResultado();
+  numeroNiveis = dados.data.levels.length;
+  ultimoNivel = numeroNiveis - 1
+  console.log(numeroNiveis);
 
-  const scrollarResultado = document.querySelector(".voltar");
-  scrollarResultado.scrollIntoView();
-  } else {
-    return
+  for (let i = 0; i < numeroNiveis; i++) {
+
+      if (i < (ultimoNivel)) {
+          minValue1 = dados.data.levels[i].minValue;
+          //console.log(minValue1);
+          minValue2 = dados.data.levels[i + 1].minValue;
+          //console.log(minValue2);
+      } else {
+          const mostreResultado = document.querySelector(".aparece-resultado");
+          mostreResultado.innerHTML = `<div class="resultado-quizz">
+          <div class="pct-acerto">
+            <h1>${pctArredondada}% de acerto: ${dados.data.levels[ultimoNivel].title}</h1>
+          </div>
+          <div class="figura-feedback">
+            <div class="figura-resultado">
+              <img src="${dados.data.levels[ultimoNivel].image}g" />
+            </div>
+            <div class="feedback">
+              <p>${dados.data.levels[ultimoNivel].text}</p>
+            </div>
+          </div>
+        </div>
+        <button class="reiniciar-quizz" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
+        <div class="voltar" onclick="voltarTela1()">
+          <h1>Voltar para home</h1>
+        </div>`;
+
+          const scrollarResultado = document.querySelector(".caixaquizz-tela2");
+          scrollarResultado.lastElementChild.scrollIntoView();
+
+      }
+
+      if (pctArredondada >= minValue1 && pctArredondada < minValue2) {
+          console.log("entra aqui")
+
+          const mostreResultado = document.querySelector(".aparece-resultado");
+          mostreResultado.innerHTML = `<div class="resultado-quizz">
+          <div class="pct-acerto">
+            <h1>${pctArredondada}% de acerto: ${dados.data.levels[i].title}</h1>
+          </div>
+          <div class="figura-feedback">
+            <div class="figura-resultado">
+              <img src="${dados.data.levels[i].image}" />
+            </div>
+            <div class="feedback">
+              <p>${dados.data.levels[i].text}</p>
+            </div>
+          </div>
+        </div>
+        <button class="reiniciar-quizz" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
+        <div class="voltar" onclick="voltarTela1()">
+          <h1>Voltar para home</h1>
+        </div>`;
+
+          const scrollarResultado = document.querySelector(".caixaquizz-tela2");
+          scrollarResultado.lastElementChild.scrollIntoView();
+          return;
+      }
   }
-} 
 
+}
+
+function reiniciarQuizz() {
+acertou = 0;
+numJogadas = 0;
+mostrarTela2(idApi);
+}
+
+function voltarTela1() {
+location.reload();
+/* const tela2 = document.querySelector(".tela2");
+tela2.classList.add("escondido");
+const tela1 = document.querySelector(".tela1");
+tela1.classList.remove("escondido"); */
+// mostre tela 1
+}
+
+const pegarQuiz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
+console.log(pegarQuiz);
