@@ -329,11 +329,6 @@ function verificaHexa(hexa) {
   }
 }
 
-/*
-voltarHome() {
-    
-}*/
-
 function verificaUrl(urlImagem) {
   const urlPattern = new RegExp(
     "^(https?:\\/\\/)?" + // validate protocol
@@ -346,8 +341,14 @@ function verificaUrl(urlImagem) {
   ); // validate fragment locator
   return !!urlPattern.test(urlImagem);
 }
+function voltarHome() {
+  document.location.reload(true);
+}
 function acessaQuizz() {
-  console.log("corolho");
-  console.log(idPergunta);
-  // buscarQuizzEscolhido(id);
+  localStorage.id = idPergunta;
+  let tela2 = document.querySelector(".tela2");
+  let tela34 = document.querySelector(".tela3-4");
+  tela34.classList.remove("visivel");
+  tela2.classList.remove("escondido");
+  buscarQuizzEscolhido(localStorage.id);
 }

@@ -56,12 +56,19 @@ function criacaoDeQuizz() {
 //   tela34.classList.add("visivel");
 // }
 // FUNÇÕES DA TELA 3.4
-function voltarHome() {
-  document.location.reload(true);
-}
+
 // function acessaQuizz() {
 //   const tela2 = document.querySelector(".tela2");
 //   const tela34 = document.querySelector(".tela3-4");
 //   tela34.classList.remove("visivel");
 //   tela2.classList.add("visivel");
 // }
+// function testandoLocalStorage() {
+//   let numero = Number(prompt("Diz uma numero ae campeão"));
+//   if (numero >= 0) {
+//     localStorage.numero = numero;
+//     console.log(localStorage.numero);
+//   }
+//   console.log(localStorage.numero);
+// }
+// testandoLocalStorage();
