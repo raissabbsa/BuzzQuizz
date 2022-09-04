@@ -20,7 +20,7 @@ function buscarQuizzEscolhido(id) {
     `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`
   );
   pegarQuizz.then(renderizarQuizzEscolhido);
-  console.log(pegarQuizz);
+  // console.log(pegarQuizz);
 }
 
 function renderizarTituloQuizz(titulo, imagem) {
@@ -108,4 +108,4 @@ function selecionarResposta(resposta) {
 const pegaQuiz = axios.get(
   "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
 );
-console.log(pegaQuiz);
+// console.log(pegaQuiz);
