@@ -90,31 +90,31 @@ function renderizarQuizzEscolhido(dados) {
 
           renderizarPerguntas.innerHTML = renderizarPerguntas.innerHTML + `<div class="caixa-perguntas">
           <div class="pergunta">
-            <h1>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h1>
+            <h1>${dados.data.questions[i].title}</h1>
           </div>
           <div class="caixa-respostas">
-            <div class="resposta-figura">
+            <div class="resposta-figura ${dados.data.questions[i].answers[k].isCorrectAnswer}" onclick="selecionarResposta(this);">
               <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
+                <img src="${dados.data.questions[i].answers[k].image}" />
               </div>
               <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[k].text}</h1>
               </div>
             </div>
-            <div class="resposta-figura">
+            <div class="resposta-figura ${dados.data.questions[i].answers[j].isCorrectAnswer}" onclick="selecionarResposta(this);">
               <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
+                <img src="${dados.data.questions[i].answers[j].image}" />
               </div>
               <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[j].text}</h1>
               </div>
             </div>
-            <div class="resposta-figura">
+            <div class="resposta-figura ${dados.data.questions[i].answers[s].isCorrectAnswer}" onclick="selecionarResposta(this);">
               <div class="figura">
-                <img src="./imagens-tela2/gatineo.png" />
+                <img src="${dados.data.questions[i].answers[s].image}" />
               </div>
               <div class="resposta">
-                <h1 class="resposta-texto">Gatineo</h1>
+                <h1 class="resposta-texto">${dados.data.questions[i].answers[s].text}</h1>
               </div>
             </div>
           </div>
