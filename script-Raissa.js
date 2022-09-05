@@ -3,6 +3,7 @@ let urlImagem;
 let qntdPerguntas;
 let qntdNiveis;
 let idPergunta;
+let a = [];
 
 function infoBasicas() {
   tituloQuizz = document.querySelector(".tituloQuizz");
@@ -345,10 +346,15 @@ function voltarHome() {
   document.location.reload(true);
 }
 function acessaQuizz() {
-  localStorage.id = idPergunta;
+  if (localStorage.id.length > 4) {
+    localStorage.id += "," + idPergunta;
+  } else {
+    localStorage.id = idPergunta;
+  }
   let tela2 = document.querySelector(".tela2");
   let tela34 = document.querySelector(".tela3-4");
   tela34.classList.remove("visivel");
   tela2.classList.remove("escondido");
-  buscarQuizzEscolhido(localStorage.id);
+  a;
+  buscarQuizzEscolhido(idPergunta);
 }

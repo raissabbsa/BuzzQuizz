@@ -13,6 +13,7 @@
   font-weight: 700;
   color: #ffffff;
   z-index: 2;
+  /* opacity: 0.2; */
 }
 .tela1 {
   width: 100vw;
@@ -31,12 +32,16 @@
   border-radius: 5px;
 }
 .tela1-seusQuizzes {
+  width: 85vw;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .tela1-todosOsQuizzes {
   width: 85vw;
   display: flex;
+  /* align-items: center; */
+  justify-content: center;
   flex-wrap: wrap;
 }
 .tela1-todosOsQuizzes img {
@@ -65,6 +70,10 @@
 }
 .tela1-imagemQuizz {
   opacity: 1;
+}
+.tela1-imagemQuizz2 {
+  opacity: 1;
+  margin-bottom: 12px;
 }
 .tela1-tituloQuizz {
   width: 272px;
@@ -109,17 +118,26 @@
   font-weight: 400;
 }
 .seusQuizzes-titulo {
-  display: flex;
-  width: 160px;
+  /* width: 160px; */
   height: 40px;
   font-size: 20px;
   font-weight: 700;
   color: #000000;
-  margin-top: 69px;
+  margin-top: 107px;
   margin-bottom: 12px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.seusQuizzesTitulo {
+  width: 340px;
+  height: 40px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.seusQuizzes {
+  margin-right: 20px;
 }
 .iconeMais {
   color: #ec362d;
@@ -131,6 +149,19 @@
   color: #000000;
   margin-top: 48px;
   margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.todosOsQuizzesTitulo {
+  width: 340px;
+  /* display: flex;
+  justify-content: center; */
+  flex-wrap: wrap;
+}
+.espaco {
+  width: 340px;
+  margin-left: 15px;
 }
 .escondido {
   display: none;
@@ -140,23 +171,30 @@
   .tela1-conteudo {
     width: 95vw;
   }
+  .seusQuizzes {
+    margin-right: 0px;
+  }
   .tela1-seusQuizzes {
+    width: 95vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .quizz {
     margin-top: 14px;
   }
   .seusQuizzes-titulo {
-    width: 91vw;
+    align-items: center;
+    flex-direction: column;
+    width: 95vw;
   }
   .todosOsQuizzes-titulo {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
   }
-  .todosOsQuizzesTitulo {
-    width: 340px;
-  }
+
   .seusQuizzes-titulo {
     width: 95vw;
   }
@@ -173,11 +211,34 @@
   .quizz {
     width: 95vw;
   }
+  .seusQuizzes {
+    margin-right: 0px;
+  }
+  .seusQuizzesTitulo {
+    width: 95vw;
+    justify-content: space-between;
+  }
+  .tela1-seusQuizzes {
+    width: 95vw;
+    /* justify-content: center;
+    align-items: center; */
+  }
   .seusQuizzes-titulo {
     width: 95vw;
   }
   .tela1-todosOsQuizzes {
     width: 95vw;
+  }
+  .todosOsQuizzes-titulo {
+    width: 85vw;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+  }
+  .seusQuizzes-titulo {
+    align-items: flex-start;
+  }
+  .todosOsQuizzesTitulo {
+    width: 75vw;
   }
   .tela1-seusQuizzes img {
     width: 95vw;

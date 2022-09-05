@@ -1,5 +1,62 @@
 //resolucao tela 1
+localStorage.id = 13175 + "," + 13176;
+let arrayId = [];
+let seusQuizzesInnerHTML = "";
+carregaPagina();
+if (localStorage.id.length > 0) {
+  if (localStorage.id.length == 5) {
+    arrayId = [localStorage.id];
+    const tela1SeusQuizzesTitulo = document.querySelector(
+      ".seusQuizzes-titulo"
+    );
+    tela1SeusQuizzesTitulo.classList.remove("escondido");
+    renderiza();
+  } else if (localStorage.id.length < 5) {
+    const tela1CriarQuizz = document.querySelector(".tela1-criarQuizz");
+    tela1CriarQuizz.classList.remove("escondido");
+  } else {
+    arrayId = localStorage.id.split(",");
+    const tela1SeusQuizzesTitulo = document.querySelector(
+      ".seusQuizzes-titulo"
+    );
+    tela1SeusQuizzesTitulo.classList.remove("escondido");
+    renderiza();
+  }
+}
+function renderiza() {
+  const promessaQuizzes = axios.get(
+    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
+  );
+  promessaQuizzes.then(inserirSeusQuizzes);
+}
+function inserirSeusQuizzes(quizz) {
+  imagemQuizz = quizz.data;
+  for (let i = 0; i < arrayId.length; i++) {
+    const seuQuizz = axios.get(
+      `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${arrayId[i]}`
+    );
 
+    seuQuizz.then(renderizaSeuQuizz);
+  }
+}
+function renderizaSeuQuizz(quizz) {
+  const tela1CriarQuizz = document.querySelector(".tela1-criarQuizz");
+  const tela1SeusQuizzesTitulo = document.querySelector(".seusQuizzes-titulo");
+  const tela1SeusQuizzes = document.querySelector(".tela1-seusQuizzes");
+  // const seusQuizzesDentro = document.querySelector(".seusQuizzesDentro");
+  // tela1CriarQuizz.classList.add("escondido");
+  // tela1SeusQuizzesTitulo.classList.remove("escondido");
+  tela1SeusQuizzes.classList.remove("escondido");
+  // seusQuizzesDentro.classList.remove("escondido");
+  // let seusQuizzes = document.querySelector(".tela1-seusQuizzes");
+  seusQuizzesInnerHTML = `<div onclick="mostrarTela2(${quizz.data.id})" class=" quizz">
+            <div class="tela1-gradiente"></div>
+            <img class="tela1-imagemQuizz2"src="${quizz.data.image}"/>
+            <div class="tela1-tituloQuizz">${quizz.data.title}</div>
+          </div>`;
+  seusQuizzesInnerHTML += tela1SeusQuizzes.innerHTML;
+  tela1SeusQuizzes.innerHTML = seusQuizzesInnerHTML;
+}
 function carregaPagina() {
   const promessaQuizzes = axios.get(
     "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
@@ -9,7 +66,7 @@ function carregaPagina() {
 }
 function inserirQuizzes(quizz) {
   imagemQuizz = quizz.data;
-  // console.log(imagemQuizz);
+
   todosOsQuizzes = document.querySelector(".tela1-todosOsQuizzes");
 
   for (let i = 0; i < imagemQuizz.length; i++) {
@@ -20,7 +77,7 @@ function inserirQuizzes(quizz) {
           </div>`;
   }
 }
-carregaPagina();
+
 function criacaoDeQuizz() {
   const tela1 = document.querySelector(".tela1");
   const tela31 = document.querySelector(".tela3-1");
