@@ -51,7 +51,9 @@
     font-size: 39px;
     line-height: 46px;
     color: #FFFFFF;
+    word-break: break-word;
     position: absolute;
+    text-align: center;
     top: center;
     right: center;
 }
@@ -76,13 +78,15 @@
 
 .pergunta {
   width: 85%;
-  height: 137px;
+  height: 180px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
   background-color: #434ca0;
 }
 
@@ -92,6 +96,7 @@
     font-weight: 700;
     font-size: 23px;
     line-height: 27px;
+    word-break: break-word;
     color: #FFFFFF;
     text-align: center;
 }
@@ -172,6 +177,7 @@
     line-height: 27px;
     color: #FFFFFF;
     text-align: center;
+    word-break: break-word;
 }
 
 .figura-feedback {
