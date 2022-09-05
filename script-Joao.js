@@ -1,5 +1,4 @@
 //resolucao tela 1
-localStorage.id = 13175 + "," + 13176;
 let arrayId = [];
 let seusQuizzesInnerHTML = "";
 carregaPagina();
